@@ -1,0 +1,41 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">Trip Detial</h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+    <div class="spacer" style="height: 100px;"></div>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed class="label-color">
+          <ion-icon name="pin"></ion-icon>
+          Station
+        </ion-label>        
+        <ion-input placeholder="Alnafeg" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed class="label-color">
+          <ion-icon name="timer"></ion-icon>
+          Arrives at
+        </ion-label>        
+        <ion-input placeholder="7:00 am" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed class="label-color">
+        <ion-icon name="car"></ion-icon>
+        Car Number
+      </ion-label>        
+      <ion-input placeholder="133148" readonly></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 40px;"></div>
+    <button color="dark" class="btn"(click)="yourTicketQRCode()">
+      <ion-icon name="apps"></ion-icon>
+      Show QR code</button>
+      <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+      <button color="dark" class="btn"(click)="advertisement()">
+        <ion-icon name="close-circle"></ion-icon>
+        Cancel Booking</button>
+    </ion-grid>
+</ion-content>

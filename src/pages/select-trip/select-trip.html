@@ -1,0 +1,19 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">
+      Select trip
+      </h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+  </ion-grid>  
+  <br><br>
+  <ion-list *ngFor="let trip of trips" class="list-trip">
+    <ion-item>
+        <span>{{trip.cityfrom}}</span>
+        <span> - </span>
+        <span>{{trip.cityto}}</span>
+        <p class="movetime">{{trip.movetime}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">
+        Posted Trip </h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+  </ion-grid>
+  <h1 style="color:#000000;font-weight:300;text-align:center;">
+    Your Trip Has Been Successfully Posted!
+  </h1>
+  <div class="spacer" style="width: 300px; height: 172px;"></div>
+  <div>
+    <p style="color:#a20606;">10 points has been deducted from your credit. Go to profile page to check your balance</p>
+  </div>
+  <div class="spacer" style="width: 300px; height: 12px;"></div>
+  <div>
+    <ion-icon class="person" name="person" (click)="driverProfile()"></ion-icon>
+    <ion-icon class="info"  name="information-circle" (click)="about()"></ion-icon>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">Driver Profile </h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+    <ion-row>
+      <img src="assets/imgs/contact.jpg" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+    </ion-row>
+    <div class="spacer" style="width: 300px; height:0px;"></div>
+
+    <ion-item class="item-icon-left item-icon-right" id="passengerProfile-list-item47">
+      <ion-label fixed>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input type="text" placeholder="Mohamed Taha">
+      </ion-input>
+    </ion-item>
+    <ion-item class="item-icon-left item-icon-right" id="passengerProfile-list-item48">
+      <ion-label fixed>
+        <ion-icon name="phone-portrait"></ion-icon>
+      </ion-label>
+        <ion-input type="tel" placeholder="+249-912-456-78"></ion-input>
+      </ion-item>
+    <ion-item class="item-icon-left item-icon-right" id="passengerProfile-list-item50">
+      <ion-label fixed>
+        <ion-icon name="mail"></ion-icon>
+      </ion-label>
+      <ion-input type="email" placeholder=" someone@example.com"></ion-input>
+    </ion-item>
+    <ion-item class="item-icon-left item-icon-right" id="passengerProfile-list-item51">
+       <ion-label fixed>
+        <ion-icon name="cash"></ion-icon>
+      </ion-label>
+        <ion-input type="number" placeholder="50 Points"></ion-input>
+      </ion-item>
+      <div class="spacer" style="width: 300px; height:10px;"></div>
+      <button color="dark" class="btn"(click)="advertisement()">
+        <ion-icon name="add"></ion-icon>
+        Get More Points Now!</button>
+        <div class="spacer" style="width: 300px; height:20px;"></div>
+    <a (click)="postTripDriver()"  class="link"> 
+      <ion-icon name="repeat"></ion-icon>
+      Switch to Driver </a>
+</ion-grid>
+</ion-content>

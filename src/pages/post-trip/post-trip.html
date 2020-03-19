@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">Post Trip Detials </h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+  </ion-grid>
+  <ion-list>
+    <ion-item>
+      <ion-label> Select Start Point  </ion-label>
+      <ion-select [(ngModel)]="formData.pointfrom" >
+      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.pointfrom}}</ion-option>
+    </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Destination </ion-label>
+      <ion-select [(ngModel)]="formData.pointto" >
+      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.pointto}}</ion-option>
+    </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Starting Time </ion-label>
+      <ion-select [(ngModel)]="formData.starttime" >
+      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.starttime}}</ion-option>
+    </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Avilable seats </ion-label>
+      <ion-select [(ngModel)]="formData.seat" >
+      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.seat}}</ion-option>
+    </ion-select>
+    </ion-item>
+    <div style="margin-top: 30px;">
+    <button ion-button class="btn" (click)="Reserve()">Continue to Reserve </button>
+  </div>
+  </ion-list>
+</ion-content>

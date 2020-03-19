@@ -1,0 +1,14 @@
+<ion-content padding>
+    <div class="spacer" style="width: 300px; height:30px;"></div>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+    <div class="spacer" style="width: 300px; height:30px;"></div>
+    <h1>Watch a video and  get more points </h1>
+    <div class="spacer" style="width: 300px; height:30px;"></div>
+    <ion-slides autoplay="5000" speed="500" pager="true"  effect=slide loop="false" (ionSlideDidChange)="changeSlides($event)">
+        <div *ngFor="let slide of slider">
+            <ion-slide> 
+                <img src="{{slide.image}}" class="img-slider"> 
+            </ion-slide>
+        </div>
+    </ion-slides>
+</ion-content>
