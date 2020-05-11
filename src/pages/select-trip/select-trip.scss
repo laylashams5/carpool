@@ -6,5 +6,15 @@ page-select-trip {
     p.movetime {
         text-align: right;
     }    
-
+    .btn {
+        border-radius: 0px !important;
+        padding: 15px;
+    }
+    .grid{
+        padding: 0;
+    }
+    .item-md {
+        padding: 6px;
+    }
+    
 }

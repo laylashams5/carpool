@@ -1,13 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+          Advertisements
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
 <ion-content padding>
     <div class="spacer" style="width: 300px; height:30px;"></div>
     <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
     <div class="spacer" style="width: 300px; height:30px;"></div>
     <h1>Watch a video and  get more points </h1>
     <div class="spacer" style="width: 300px; height:30px;"></div>
-    <ion-slides autoplay="5000" speed="500" pager="true"  effect=slide loop="false" (ionSlideDidChange)="changeSlides($event)">
+    <ion-slides  pager="true"  effect=slide loop="false" (ionSlideDidChange)="changeSlides($event)">
         <div *ngFor="let slide of slider">
             <ion-slide> 
-                <img src="{{slide.image}}" class="img-slider"> 
+                <img src="http://localhost/carpool/system/images/{{slide.image}}" class="img-slider" #myImage (click)="presentImage(myImage,slide)" > 
             </ion-slide>
         </div>
     </ion-slides>

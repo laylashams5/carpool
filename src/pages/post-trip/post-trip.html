@@ -8,30 +8,30 @@
   <ion-list>
     <ion-item>
       <ion-label> Select Start Point  </ion-label>
-      <ion-select [(ngModel)]="formData.pointfrom" >
-      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.pointfrom}}</ion-option>
+      <ion-select [(ngModel)]="data.cityfrom" >
+      <ion-option *ngFor="let point of points" value="{{point.cityfrom}}">{{point.cityfrom}}</ion-option>
     </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Select Destination </ion-label>
-      <ion-select [(ngModel)]="formData.pointto" >
-      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.pointto}}</ion-option>
+      <ion-select [(ngModel)]="data.cityto" >
+      <ion-option *ngFor="let point of points" value="{{point.cityto}}">{{point.cityto}}</ion-option>
     </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Select Starting Time </ion-label>
-      <ion-select [(ngModel)]="formData.starttime" >
-      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.starttime}}</ion-option>
+      <ion-select [(ngModel)]="data.arrivetime">
+      <ion-option *ngFor="let point of points" value="{{point.arrivetime}}">{{point.arrivetime}}</ion-option>
     </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Avilable seats </ion-label>
-      <ion-select [(ngModel)]="formData.seat" >
-      <ion-option *ngFor="let point of points" value="{{point.id}}">{{point.seat}}</ion-option>
+      <ion-select [(ngModel)]="data.seats" >
+      <ion-option *ngFor="let point of points" value="{{point.seats}}">{{point.seats}}</ion-option>
     </ion-select>
     </ion-item>
     <div style="margin-top: 30px;">
-    <button ion-button class="btn" (click)="Reserve()">Continue to Reserve </button>
+    <button ion-button class="btn" (click)="postTrip()"> Post Trip  </button>
   </div>
   </ion-list>
 </ion-content>

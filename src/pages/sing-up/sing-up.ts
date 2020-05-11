@@ -1,3 +1,4 @@
+import { SingInPage } from './../sing-in/sing-in';
 import { PassengerRegPage } from './../passenger-reg/passenger-reg';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,7 +17,7 @@ export class SingUpPage {
     console.log('ionViewDidLoad SingUpPage');
   }
   goBack() {
-    this.navCtrl.pop()
+    this.navCtrl.setRoot(SingInPage)
   }
   driverReg() {
     this.navCtrl.setRoot(DriverRegPage)

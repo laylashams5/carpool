@@ -1,3 +1,20 @@
 page-driver-reg {
-
+    .tip_up {
+        color:#84959a;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: 1px solid transparent;
+    }
+    .item-md {
+        padding-left: 0px;
+        background-color: transparent;
+    }
+    ion-input {
+        width: 97%;
+    }
+    .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: transparent;
+        -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+        box-shadow: inset 0 -1px 0 0 transparent
+    }
 }

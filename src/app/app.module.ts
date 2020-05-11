@@ -1,3 +1,5 @@
+import { HistoryPassengerPage } from './../pages/history-passenger/history-passenger';
+import { HistoryDriverPage } from './../pages/history-driver/history-driver';
 import { SelectedTripPage } from '../pages/selected-trip/selected-trip';
 import { SelectTripPage } from '../pages/select-trip/select-trip';
 import { AdvertisementPage } from '../pages/advertisement/advertisement';
@@ -22,6 +24,19 @@ import { TicketPage } from '../pages/ticket/ticket';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { PostTripPage } from '../pages/post-trip/post-trip';
 import { PostedTripPage } from '../pages/posted-trip/posted-trip';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ApiProvider } from '../providers/api/api';
+import { HttpModule } from '@angular/http';
+import { HA_Storage } from '../providers/api/storage/storage';
+import { HA_Session } from '../providers/session/session';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { AboutPage } from '../pages/about/about';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { FilterPipe } from '../pipes/filter/filter';
+import { QrcodePage } from '../pages/qrcode/qrcode';
 let pages = [
   MyApp,
   HomePage,
@@ -36,17 +51,25 @@ let pages = [
   TripDetailPage,
   TicketPage,
   AdvertisementPage,
+  AboutPage,
   SelectTripPage,
   PostTripPage,
   PostedTripPage,
   SelectedTripPage,
+  HistoryDriverPage,
+  HistoryPassengerPage,
+  QrcodePage
 ]
 @NgModule({
   declarations: [
-    pages
+    pages,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    IonicImageViewerModule,
+    NgxQRCodeModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -58,6 +81,14 @@ let pages = [
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
+    HttpClientModule,
+    HttpClient,
+    ApiProvider,
+    HA_Storage,
+    HA_Session,
+    Camera,
+    FileTransfer,
+    SocialSharing
   ]
 })
 export class AppModule {}
