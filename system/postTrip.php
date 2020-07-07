@@ -12,8 +12,8 @@ $error = array();
 
 
  if(isset($input)) {
-   $member_id = $data['member_id'];
-   $status_id = $data['status_id'];
+    $member_id = $data['member_id'];
+    $status_id = $data['status_id'];
     $seats = $data['seats'];
     $carno = $data['carno'];
     $cityfrom = $data['cityfrom']; 

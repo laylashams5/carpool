@@ -1,0 +1,24 @@
+<ion-content padding>
+  <ion-grid class="bg">
+    <div class="spacer" style="width: 300px; height: 33px;"></div>
+    <ion-row>
+      <img src="assets/imgs/logo.png" class="logo">
+    </ion-row>
+    <ion-icon name="arrow-back" class="back-icon" (click)="goBack()"></ion-icon>
+    <div class="spacer" style="width: 300px; height: 77px;"></div>
+    <ion-row>
+      <ion-col col-6>
+        <button (click)="passengerReg()" class="btn">
+          <ion-icon name="contacts"></ion-icon>
+          Passenger
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button (click)="driverReg()" class="btn">
+          <ion-icon name="car"></ion-icon>
+          Driver
+        </button>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

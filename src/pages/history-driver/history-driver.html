@@ -1,0 +1,45 @@
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">History Driver Trips</h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+    </ion-grid>
+
+    <ion-grid class="order" *ngIf="trips.length=='0'">
+      <img src="assets/imgs/nodata.png"  class="order-img">
+     </ion-grid>
+
+     <div *ngIf="trips.length >= '1'">
+      <ion-card class="order" *ngFor="let trip of trips" (click)="goToTrip(trip)">
+        <ion-grid  class="ord-bg">
+          <p>
+            <ion-icon name="ios-person-outline"></ion-icon>
+            Passenger ID :
+             {{trip.member_id}}
+          </p>
+          <p>
+            <ion-icon name="ios-grid-outline"></ion-icon>
+             Trip ID :
+             {{trip.id}}
+          </p>
+          <p>
+            <ion-icon name="ios-alarm-outline"></ion-icon>
+            Trip Arrivetime :
+            {{trip.arrivetime}}
+          </p>
+          <p>
+            <ion-icon name="ios-browsers-outline"></ion-icon>
+            Seats :
+            {{trip.seats}}
+          </p>
+          <p>
+            <ion-icon name="ios-alert-outline"></ion-icon>
+            Station:
+            {{trip.cityfrom}} - {{trip.cityto}}
+          </p>
+        </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">
+      Select trip
+      </h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+  </ion-grid>  
+  <br><br>
+  <ion-list class="list-trip">
+
+    <ion-item>
+    <ion-label>
+      Select start off point 
+    </ion-label>
+      <ion-select [(ngModel)]="data.pointfrom">
+        <ion-option *ngFor="let trip of trips" value="{{trip.cityfrom}}">{{trip.cityfrom}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+
+    <ion-item>
+    <ion-label>
+      Select end off point
+    </ion-label>
+      <ion-select [(ngModel)]="data.pointto">
+        <ion-option *ngFor="let trip of trips" value="{{trip.cityto}}">{{trip.cityto}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <ion-item>
+    <ion-label>
+      Select pick up time  
+    </ion-label>
+      <ion-select [(ngModel)]="data.starttime">
+        <ion-option *ngFor="let trip of trips" value="{{trip.arrivetime}}">{{trip.arrivetime}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <ion-item>
+    <ion-label>
+      Select aviable seats
+    </ion-label>
+      <ion-select [(ngModel)]="data.seats">
+        <ion-option  value="1">1</ion-option>
+        <ion-option  value="2">2</ion-option>
+        <ion-option  value="3">3</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <ion-item>
+    <ion-label>
+      Select car model  
+    </ion-label>
+      <ion-select [(ngModel)]="data.carmodel">
+        <ion-option *ngFor="let trip of users" value="{{trip.carmodel}}" (ionSelect)="chooseDriver(trip)">{{trip.carmodel}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <button color="dark" class="btn"(click)="ConfirmTrip()">
+      Confirm Selection Trip
+    </button>
+  </ion-grid>
+</ion-content>

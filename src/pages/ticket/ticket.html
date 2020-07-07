@@ -1,0 +1,23 @@
+<ion-content padding>
+  <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+  <ion-grid>
+    <div class="spacer" style="width: 300px; height: 27px;"></div>
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-style: italic;font-weight:bold;text-align:center;display: table;margin: 0 auto;">
+        Your Ticket QR Code 
+      </h2>
+      <p class="para">Please show this bar code to the driver before starting the trip </p>
+    </ion-row>
+      <ion-input type="text" placeholder="MY QR Code data" [(ngModel)]="order.qrcode">
+      </ion-input>
+      <div class="spacer" style="width: 300px; height: 30px;"></div>
+
+    <button ion-button class="btn" (click)="scan()">QR Code</button>
+    <ion-card *ngIf="createdCode">
+      <ngx-qrcode [(qrc-value)]="createdCode"></ngx-qrcode>
+      <ion-card-content>
+        <p>Value: {{ createdCode }}</p>
+      </ion-card-content>
+    </ion-card>
+    </ion-grid>
+  </ion-content>

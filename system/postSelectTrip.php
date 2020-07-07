@@ -13,6 +13,7 @@ $error = array();
 
  if(isset($input)) {
     $member_id = $data['member_id'];
+    $driver_id = $data['driver_id'];
     $status_id = $data['status_id'];
     $seats = $data['seats'];
     $carno = $data['carmodel'];
@@ -23,6 +24,8 @@ $error = array();
  }
     $member_id = mysqli_real_escape_string($con,$member_id);
     $member_id = stripslashes($member_id);
+    $driver_id = mysqli_real_escape_string($con,$driver_id);
+    $driver_id = stripslashes($driver_id);
     $seats = mysqli_real_escape_string($con,$seats);
     $seats = stripslashes($seats);
     $carno = mysqli_real_escape_string($con,$carno);
@@ -34,7 +37,7 @@ $error = array();
     $arrivetime = mysqli_real_escape_string($con,$arrivetime);
     $arrivetime = stripslashes($arrivetime);
 
-    $q = mysqli_query($con, "INSERT INTO `trips` (`member_id`,  `status_id`,  `seats` , `carmodel` , `pointfrom` , `pointto` , `starttime`, `addtime` ) VALUES ('$member_id', '$status_id', '$seats', '$carno', '$cityfrom', '$cityto', '$arrivetime', '$addtime')");
+    $q = mysqli_query($con, "INSERT INTO `trips` (`member_id`, `driver_id`, `status_id`,  `seats` , `carmodel` , `pointfrom` , `pointto` , `starttime`, `addtime` ) VALUES ('$member_id', '$driver_id', '$status_id', '$seats', '$carno', '$cityfrom', '$cityto', '$arrivetime', '$addtime')");
     if($q){
     $error['error'] = false;
     }

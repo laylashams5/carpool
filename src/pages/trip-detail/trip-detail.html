@@ -1,0 +1,51 @@
+<ion-content padding>
+  <ion-grid >
+    <ion-row>
+      <h2  style="color:#FFFCFC;font-weight:400;text-align:center;display: table;margin: 0 auto;">Trip Detial</h2>
+    </ion-row>
+    <ion-icon class="back-icon" name="arrow-back" (click)="goBack()"></ion-icon>
+    <div class="spacer" style="height: 100px;"></div>
+    <ion-list>
+      <ion-item>
+        <ion-label stack class="label-color">
+          <ion-icon name="pin"></ion-icon>
+          Station
+        </ion-label>        
+        <ion-input placeholder="{{trip.pointfrom}} - {{trip.pointto}}" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stack class="label-color">
+          <ion-icon name="timer"></ion-icon>
+          Arrives at
+        </ion-label>        
+        <ion-input placeholder="{{trip.starttime}}" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stack class="label-color">
+        <ion-icon name="car"></ion-icon>
+        Car Number
+      </ion-label>        
+      <ion-input placeholder="{{trip.carmodel}}" readonly></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div *ngIf="session.user?.typeid=='1'" class="spacer" style="width: 300px; height: 40px;"></div>
+    <button *ngIf="session.user?.typeid=='1'" color="dark" class="btn"(click)="yourTicketQRCode(trip)">
+      <ion-icon name="apps"></ion-icon>
+      Show QR code</button>
+      <div class="spacer"  style="width: 300px; height: 10px;"></div>
+      <button *ngIf="session.user?.typeid=='2'" color="dark" class="btn" (click)="ArrivedPostedTrip(trip)">
+        <ion-icon name="apps"></ion-icon>
+        Scan QR code</button>
+        <div class="spacer"  style="width: 300px; height: 10px;"></div>
+      <button  color="dark" class="btn"(click)="CancelSelectTrip(status_id)" *ngIf="trip.status_id =='1' || trip.status_id =='4'">
+        <ion-icon name="close-circle"></ion-icon>
+        Cancel Booking</button>
+        <div  class="spacer" style="width: 300px; height: 10px;"></div>
+        <button color="dark" class="btn" *ngIf="trip.status_id =='3'">
+          <ion-icon name="close-circle"></ion-icon>
+          Canceled </button>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+    </ion-grid>
+
+</ion-content>
